@@ -1,0 +1,9 @@
+FROM homeassistant/%%BALENA_MACHINE_NAME%%-homeassistant
+
+# Installing this ourselves tbh
+RUN pip install jsonrpclib-pelix
+
+WORKDIR /root/
+COPY . ./
+
+CMD ["bash", "start.sh"]

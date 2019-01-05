@@ -1,0 +1,3 @@
+[submodule "blinds"]
+	path = blinds
+	url = git@github.com:EdWard680/blinds.git

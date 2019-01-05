@@ -1,0 +1,17 @@
+version: '2'
+volumes:
+    resin-data:
+    hass-config:
+services:
+    blinds:
+        build: ./blinds
+        privileged: true
+        network_mode: host
+        volumes:
+            - 'resin-data:/data'
+    hass:
+        build: ./hass
+        restart: always
+        network_mode: host
+        volumes:
+            - 'hass-config:/config'
