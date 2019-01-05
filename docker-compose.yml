@@ -7,11 +7,16 @@ services:
         build: ./blinds
         privileged: true
         network_mode: host
+        ports:
+            - '8008:80'
+            - '8080'
         volumes:
             - 'resin-data:/data'
     hass:
         build: ./hass
         restart: always
         network_mode: host
+        ports:
+            - '80:8123'
         volumes:
             - 'hass-config:/config'
