@@ -6,7 +6,6 @@ services:
     blinds:
         build: ./blinds
         privileged: true
-        network_mode: host
         ports:
             - '8008:80'
             - '8080'
@@ -14,9 +13,14 @@ services:
             - 'resin-data:/data'
     hass:
         build: ./hass
+        cap_add:
+            - NET_ADMIN
         restart: always
         network_mode: host
-        ports:
-            - '80:8123'
+        volumes:
+            - 'hass-config:/config'
+    git:
+        build: ./git
+        restart: always
         volumes:
             - 'hass-config:/config'
