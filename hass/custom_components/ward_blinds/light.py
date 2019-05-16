@@ -119,7 +119,6 @@ class WardBlinds(Light):
         # Update the blinds state
         # Checks if its moving, if so, doesn't update, keeps most recent values
         if self._blinds.get_state() == 0:
-            _LOGGER.info("Updating state")
             self._state = not self._blinds.closed()
             self._max_open = self._blinds.get_config()['hardware_config']['open_millis']
             self._amount_open = self._blinds.get_position()
