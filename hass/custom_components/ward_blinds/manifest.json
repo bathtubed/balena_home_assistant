@@ -1,0 +1,8 @@
+{
+  "domain": "ward_blinds",
+  "name": "Ward Blinds",
+  "documentation": "https://github.com/EdWard680/blinds",
+  "dependencies": [],
+  "codeowners": ["@EdWard680"],
+  "requirements": ["jsonrpclib-pelix>=0.4.0"]
+}
